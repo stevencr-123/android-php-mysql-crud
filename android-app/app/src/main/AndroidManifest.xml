@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permisos para usar la red -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- usesCleartextTraffic: Android 9+ bloquea http:// por defecto.
+         Nuestro servidor local XAMPP no tiene https, así que lo habilitamos. -->
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EjemploConexionHttp"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".vistas.PantallaInicio"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".vistas.PantallaListado"
+            android:exported="false"
+            android:label="LISTADO DE USUARIOS" />
+
+        <activity
+            android:name=".vistas.PantallaCrudUsuario"
+            android:exported="false"
+            android:label="DATOS DE USUARIO" />
+    </application>
+</manifest>
